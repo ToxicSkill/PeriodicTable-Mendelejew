@@ -1,0 +1,34 @@
+﻿@model List<MendelejewNsp.Models.ElementViewModel>
+
+@{ ViewData["Title"] = "GetMetaloids"; }
+<html>
+<body>
+    @*Dekoracyjny pasek w kolorze odpowiadającym rodzajowi pierwiastka*@
+
+    <div id="t_metaloid">
+    </div>
+    <p class="title_font">METALOIDY</p>
+
+    <hr>
+    @*Pętla po każdym pierwiastku*@
+    @foreach (var nonMetal in Model)
+    {
+        <span id="up">
+            @nonMetal.AtomicNumber
+        </span>
+        <span id="down">
+            @nonMetal.MassNumber
+        </span>
+        <span class="large_font">
+            @nonMetal.ShortName
+        </span>
+        @*Link do szczegółów wybranego pierwiastka*@
+        <li style="text-decoration: none; list-style-type: none;">
+            <h1>@Html.ActionLink(nonMetal.Name, "GetElement", "Home", new { elementShotName = nonMetal.ShortName }, null)</h1>
+        </li>
+        <hr>
+    }
+
+</body>
+
+</html>

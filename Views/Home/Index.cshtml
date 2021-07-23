@@ -1,0 +1,26 @@
+﻿@{ ViewData["Title"] = "Home Page"; }
+
+<div>
+    <!--Stona główna-->
+    <div id="index_title">
+        <p class="large_font">Układ okresowy</p>
+        <p class="small_font">Tablica Mendelejewa</p>
+    </div>
+    @*Linki do poszczególnych stron*@
+    <ul id="menu">
+        @*Wyszczególnienie pierwszego linku*@
+        <li><h1>@Html.ActionLink("Pierwiastki chemiczne", "ElementsTable", "Home")</h1></li>
+        <li>@Html.ActionLink("Niemetale", "GetNonMetals", "Home")</li>
+        <li>@Html.ActionLink("Metale alkaiczne", "GetAlcaicMetals", "Home")</li>
+        <li>@Html.ActionLink("Metale ziem alkaicznych", "GetEarthAlcaicMetals", "Home")</li>
+        <li>@Html.ActionLink("Metale przejściowe", "GetTransitionMetals", "Home")</li>
+        <li>@Html.ActionLink("Metaloidy", "GetMetaloids", "Home")</li>
+        <li>@Html.ActionLink("Półprzewodniki", "GetSemiConductors", "Home")</li>
+        <li>@Html.ActionLink("Halogeny", "GetHalogens", "Home")</li>
+        <li>@Html.ActionLink("Gazy szlachetne", "GetNobleGases", "Home")</li>
+        <li>@Html.ActionLink("Lantanowce", "GetLanthanoids", "Home")</li>
+        <li>@Html.ActionLink("Aktynowce", "GetActinides", "Home")</li>
+        <li>@Html.ActionLink("Stwórz nowy pierwiastek", "NewElementFormNames", "Home")</li>
+        <li>@Html.ActionLink("Formularz kontaktowy", "ContactForm", "Home")</li>
+    </ul>
+</div>

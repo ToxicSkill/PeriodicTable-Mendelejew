@@ -1,0 +1,295 @@
+﻿* {
+    /*Używana czcionka*/
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+/*Style różnych wielkości czcionek i interlinii*/
+.huge_font {
+    font-size: 300px;
+}
+
+.large_font {
+    font-size: 90px;
+    padding-bottom: 0px;
+    line-height: 0.7;
+    margin-top: 30px;
+}
+
+.medium_font {
+    font-size: 60px;
+    font-weight: 100;
+}
+
+.small_font {
+    font-size: 20px;
+}
+
+.title_font {
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Rubik', sans-serif;
+    font-style: normal;
+    font-size: 80px;
+}
+
+/*Styl poisu pierwiastka (szczegółowego)*/
+.description {
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 0.2;
+}
+/*Styl dla mniejszej interlinii*/
+.line {
+    margin-top: 100px;
+    line-height: 0.8;
+}
+
+/*Styl dla tytułu na pierwszej stronie*/
+#index_title {
+    line-height: 0.7;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+/*Styl dla umiejscowienia liczb masowych i atomowych*/
+#up {
+    vertical-align: top;
+    font-size: 20px;
+}
+
+#down {
+    vertical-align: bottom;
+    text-align: left;
+    font-size: 20px;
+}
+
+#middle {
+    vertical-align: middle;
+    font-size: 30px;
+}
+
+#right {
+    text-align: right;
+}
+
+/*Styl menu*/
+
+#menu {
+    font-size: 22px;
+}
+
+    #menu li {
+        text-decoration: none;
+    }
+
+/*Styl dotyczący tabeli - układu okresowego*/
+#periodic {
+    margin: 0 auto;
+    font-family: 'Orbitron', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+    #periodic tr td {
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        border-style: outset;
+        border-width: 1px;
+    }
+
+        #periodic tr td.empty {
+            background-color: white;
+            cursor: auto;
+            border: none;
+            text-align: left;
+        }
+
+    #periodic tr.spacer td {
+        height: 10px;
+    }
+
+    #periodic tr td sup {
+        font-size: 11px;
+        display: block;
+        text-align: center;
+    }
+
+    #periodic tr td {
+        font-size: 15px;
+        text-align: center;
+        position: relative;
+    }
+
+/*    Style dla kolorów
+    Bez pojedynczegio znaku - kolor boxa wbr ukłądzie okresowym
+    'c_' na początku - kolor symbolu pierwiastka
+    't_' nav początku - kolor paska dekoracyjnego*/
+
+/*yellow*/
+#non_metal {
+    text-align: center;
+    background-color: #aee545;
+}
+
+#c_non_metal {
+    color: #aee545;
+}
+
+#t_non_metal {
+    width: 100%;
+    height: 10px;
+    background-color: #aee545;
+}
+
+/*purple*/
+#noble_gas {
+    text-align: center;
+    background-color: #b03ce5;
+}
+
+#c_noble_gas {
+    color: #b03ce5;
+}
+
+#t_noble_gas {
+    width: 100%;
+    height: 10px;
+    background-color: #b03ce5;
+}
+
+/*red*/
+#alcaic {
+    text-align: center;
+    background-color: #ff0000;
+}
+
+#c_alcaic {
+    color: #ff0000;
+}
+
+#t_alcaic {
+    width: 100%;
+    height: 10px;
+    background-color: #ff0000;
+}
+
+/*blue*/
+#earth_alcaic {
+    text-align: center;
+    background-color: #019aff;
+}
+
+#c_earth_alcaic {
+    color: #019aff;
+}
+
+#t_earth_alcaic {
+    width: 100%;
+    height: 10px;
+    background-color: #019aff;
+}
+
+/*light red*/
+#metaloid {
+    text-align: center;
+    background-color: #ff460a;
+}
+
+#c_metaloid {
+    color: #ff460a;
+}
+
+#t_metaloid {
+    width: 100%;
+    height: 10px;
+    background-color: #ff460a;
+}
+
+/*orange*/
+#transition_metal {
+    text-align: center;
+    background-color: #e6c213;
+}
+
+#c_transition_metal {
+    color: #e6c213;
+}
+
+#t_transition_metal {
+    width: 100%;
+    height: 10px;
+    background-color: #e6c213;
+}
+
+/*green*/
+#halogen {
+    text-align: center;
+    background-color: #10d708;
+}
+
+#c_halogen {
+    color: #10d708;
+}
+
+#t_halogen {
+    width: 100%;
+    height: 10px;
+    background-color: #10d708;
+}
+
+/*bronze*/
+#semi_conductor {
+    text-align: center;
+    background-color: #5592dd;
+}
+
+#c_semi_conductor {
+    color: #bb5555;
+}
+
+#t_semi_conductor {
+    width: 100%;
+    height: 10px;
+    background-color: #bb5555;
+}
+
+/*dark orange*/
+#actinide {
+    text-align: center;
+    background-color: #e95555;
+}
+
+#c_actinide {
+    color: #e95555;
+}
+
+#t_actinide {
+    width: 100%;
+    height: 10px;
+    background-color: #e95555;
+}
+
+/*grey*/
+#lanthanoid {
+    text-align: center;
+    background-color: #b0c778;
+}
+
+#c_lanthanoid {
+    color: #b0c778;
+}
+
+#t_lanthanoid {
+    width: 100%;
+    height: 10px;
+    background-color: #b0c778;
+}
+
+/*black*/
+#t_none {
+    width: 100%;
+    height: 10px;
+    background-color: black;
+}

@@ -1,0 +1,133 @@
+﻿@model MendelejewNsp.Models.ElementViewModel
+
+@{ ViewData["Title"] = "GetElement"; }
+
+<html>
+<body>
+    @*Dekoracyjny pasek w kolorze odpowiadającym rodzajowi pierwiastka*@
+    @{
+        switch (Model.Type.ToString().ToLower())
+        {
+            case "nonmetal":
+                <div id="t_non_metal">
+                </div>
+                break;
+            case "noblegas":
+                <div id="t_noble_gas">
+                </div>
+                break;
+            case "alcaic":
+                <div id="t_alcaic">
+                </div>
+                break;
+            case "earthalcaic":
+                <div id="t_earth_alcaic">
+                </div>
+                break;
+            case "metaloid":
+                <div id="t_metaloid">
+                </div>
+                break;
+            case "halogen":
+                <div id="t_halogen">
+                </div>
+                break;
+            case "semiconductor":
+                <div id="t_semi_conductor">
+                </div>
+                break;
+            case "transitionmetal":
+                <div id="t_transition_metal">
+                </div>
+                break;
+            case "lanthanoid":
+                <div id="t_lanthanoid">
+                </div>
+                break;
+            case "actinide":
+                <div id="t_actinide">
+                </div>
+                break;
+            default:
+                <div id="t_none">
+                </div>
+                break;
+        }
+    }
+    <div class="line">
+        <span class="huge_font">
+            @Model.ShortName
+        </span>
+        <span class="large_font">
+            @Model.Name
+        </span>
+        <p class="medium_font">
+            @Model.LatinName
+        </p>
+    </div>
+    @*Wyświetlenie wszystkich wartości opisujących wybrany pierwiastek*@
+    <div class="description">
+        <p>Liczba masowa: @Model.MassNumber</p>
+        <p>Liczba atomowa: @Model.AtomicNumber</p>
+        <p>Liczba neutronów: @Model.Neutrons</p>
+        <p>Liczba protonów: @Model.Protons</p>
+        <p>Rok odkrycia: @Model.YearOfDiscover</p>
+        @{
+            //Instrukcja warunkowa dla gęstości - nie wszędzie została zmierozna
+            if (Model.Density == 0)
+            {
+                <p>
+                    Gęstość: nie podano
+                </p>
+            }
+            else
+            {
+                <p>
+                    Gęstość: @Model.Density  g/cm<sup>3</sup>
+                </p>
+            }
+        }
+        @{
+            //Opis kategorii
+            switch (Model.Type.ToString().ToLower())
+            {
+                case "nonmetal":
+                    <p>Kategoria: niemetal</p>
+                    break;
+                case "noblegas":
+                    <p>Kategoria: gaz szlachetny</p>
+                    break;
+                case "alcaic":
+                    <p>Kategoria: metal alkaiczny</p>
+                    break;
+                case "earthalcaic":
+                    <p>Kategoria: metal ziem alkaicznych</p>
+                    break;
+                case "metaloid":
+                    <p>Kategoria: metaloid</p>
+                    break;
+                case "halogen":
+                    <p>Kategoria: halogen</p>
+                    break;
+                case "semconductor":
+                    <p>Kategoria: półprzewodnik</p>
+                    break;
+                case "transitionmetal":
+                    <p>Kategoria: metal przejściowy</p>
+                    break;
+                case "lanthanoid":
+                    <p>Kategoria: lantanowiec</p>
+                    break;
+                case "actinide":
+                    <p>Kategoria: aktynowiec</p>
+                    break;
+                default:
+                    break;
+            }
+        }
+    </div>
+    @*Link do wikipedii - artykuł o danym pierwiastku*@
+    <p>Dowiedz się więcej o tym  <a href="https://pl.wikipedia.org/wiki/ @Model.Name.ToString()">pierwiastku.</a>
+
+</body>
+</html>

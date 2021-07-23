@@ -1,0 +1,43 @@
+﻿
+<body>
+    @*Wyświetlenie tekstu i nazwą stworzonego pierwiastka*@
+    <div>
+        <h3>Gratualcje, stworzyłe/aś nowy pierwiastek: @ViewBag.name.</h3>
+    </div>
+    <div>
+        @*Czarny pasek do wyszczególnienia względem pozostałych pirwiastków*@
+        <div id="t_none">
+        </div>
+        @*Przypisanie do zmiennej 'model' wartości zapisanej w TempData, w celu wyświetlenia jej skladników*@
+        @{
+            var _model = TempData["element"] as MendelejewNsp.Models.ElementViewModel;
+        }
+
+        <div class="line">
+            <span class="huge_font">
+                @_model.ShortName
+            </span>
+            <span class="large_font">
+                @_model.Name
+            </span>
+            <p class="medium_font">
+                @_model.LatinName
+            </p>
+        </div>
+        <div class="description">
+            <p>Liczba masowa: @_model.MassNumber</p>
+            <p>Liczba atomowa: @_model.AtomicNumber</p>
+            <p>Liczba neutronów: @_model.Neutrons</p>
+            <p>Liczba protonów: @_model.Protons</p>
+            <p>Rok odkrycia: @_model.YearOfDiscover</p>
+            <p>Gęstość: @_model.Density g/cm<sup>3</sup></p>
+            <p>Kategoria: @_model.Type</p>
+        </div>
+    </div>
+    <hr />
+    @*Link do strony początkowej*@
+    <div>
+        @Html.ActionLink("Powrót na stronę początkową", "Index")
+    </div>
+</body>
+</html>

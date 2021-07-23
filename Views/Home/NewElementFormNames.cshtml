@@ -1,0 +1,44 @@
+﻿@{ ViewData["Title"] = "NewElementFormNames"; }
+
+
+@model MendelejewNsp.Models.ElementViewModel
+@*Strona z formularzem do uzupełnienia nazw nowego pierwiastka*@
+@using (Html.BeginForm("NewElementFormNames", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    //Tworzenie pól do uzupełnienia przez użytkownika
+    <div class="form-horizontal">
+        <h4>Stwórz nowy pierwiastek!</h4>
+        <h1>Podaj nazwy nowego pierwiastka:</h1>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, "Nazwa", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ShortName, "Skrót", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ShortName, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.LatinName, "Nazwa łacińska", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LatinName, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+        @*Przycisk do podsumowania i przejścia do kolejnej strony*@
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Stwórz" class="btn btn-success" />
+            </div>
+        </div>
+    </div>}
+@*Link do powrotu na stronę początkową*@
+<div>
+    @Html.ActionLink("Powrót na stronę początkową", "Index")
+</div>

@@ -1,0 +1,39 @@
+﻿@{ ViewData["Title"] = "ContactForm"; }
+
+
+@model MendelejewNsp.Models.ContactFormViewModel
+<!--Formularz kontaktowy-->
+@using (Html.BeginForm("ContactForm", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken() //Tworzenie pól do uzupełnienia przez użytkownika
+    <div class="form-horizontal">
+        <h2>Formularz kotaktowy</h2>
+        <h5>Napisz do mnie w razie problemów</h5>
+        <hr />
+        <!--Imię-->
+        <div class="form-group">
+            @Html.LabelFor(model => model.FirstName, "Imie", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+        <!--Nazwisko-->
+        <div class="form-group">
+            @Html.LabelFor(model => model.LastName, "Nazwisko", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        @*Przycisk do podsumowania i zamknięcia strony*@
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Zatwierdź" class="btn btn-success" />
+            </div>
+        </div>
+    </div>}
+
+@*Link do powrotu na stronę początkową*@
+<div>
+    @Html.ActionLink("Powrót na stronę początkową", "Index")
+</div>

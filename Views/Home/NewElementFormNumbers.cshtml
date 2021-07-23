@@ -1,0 +1,94 @@
+﻿@{ ViewData["Title"] = "NewElementFormNumbers"; }
+
+@*Strona z formularzem do uzupełnienia liczb charakteryzujących nowy pierwiastek*@
+
+@model MendelejewNsp.Models.ElementViewModel
+<html>
+<body>
+    @*Wyświetlenie nazw stworzonych w poprzedniej stronie*@
+    <div id="t_none">
+    </div>
+    @*Stworzenie zmiennej do przechowania wartości z TempData i wyświetlenia jej składników*@
+    @{ var _model = TempData["elementName"] as MendelejewNsp.Models.ElementViewModel; }
+
+    <div class="line">
+        <span class="huge_font">
+            @_model.ShortName
+        </span>
+        <span class="large_font">
+            @_model.Name
+        </span>
+        <p class="medium_font">
+            @_model.LatinName
+        </p>
+    </div>
+
+    <hr />
+    <h1>Podaj liczby charakteryzujące nowy pierwiastek:</h1>
+    @using (Html.BeginForm("NewElementFormNumbers", "Home", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken() //Tworzenie pól do uzupełnienia przez użytkownika
+        <div class="form-horizontal">
+            <div class="form-group">
+                @Html.LabelFor(model => model.AtomicNumber, "Liczba atomowa", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.AtomicNumber, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                <div style="display: none">
+                    @Html.EditorFor(model => model.ShortName, new { _model.ShortName })
+                    @Html.EditorFor(model => model.Name, new { _model.Name })
+                    @Html.EditorFor(model => model.LatinName, new { _model.LatinName })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.MassNumber, "Liczba masowa", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.MassNumber, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Protons, "Liczba protonów", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Protons, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Neutrons, "Liczba netronów", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Neutrons, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Density, "Gęstość", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Density, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.YearOfDiscover, "Rok odkrycia", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.YearOfDiscover, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Type, "Typ", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Type, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+            @*Przycisk do podsumowania i otworzenia strony ze sczegółowym opisem stworzonego pierwiastka*@
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Stwórz" class="btn btn-success" />
+                </div>
+            </div>
+        </div>}
+    @*Link do powrotu na stronę poprzednią*@
+
+    <div>
+        @Html.ActionLink("Powrót na poprzednią stronę", "NewElementFormNames")
+    </div>
+
+</body>
+</html>
